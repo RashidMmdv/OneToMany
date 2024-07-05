@@ -19,7 +19,7 @@ public class Student {
      Boolean active;
      Integer age;
 
-     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+     @OneToOne(cascade = CascadeType.ALL)
      @JoinColumn(name = "address_id")
      Address address;
 

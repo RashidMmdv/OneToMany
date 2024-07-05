@@ -7,12 +7,11 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Data
 @Builder
 public class Phone {
     @Id
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String number;
 

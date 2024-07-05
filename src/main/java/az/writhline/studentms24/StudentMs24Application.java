@@ -35,47 +35,35 @@ public class StudentMs24Application {
         public void run(String... args) throws Exception {
 
             Student student = studentRepository.findById(4L).get();
-//            log.info("Student is {}", student);
-
-            student.getPhones().add(Phone.builder()
-                    .number("+994 50 636 67 60")
-                    .student(student)
-                    .build());
+            student.getPhones().removeIf((phone)->phone.getNumber().equals("+994 50 636 67 60"));
             studentRepository.save(student);
-        }
-    }
+            log.info("Student is {}", student);
 
-//
-//    @Bean
-//    @Transactional
-//    CommandLineRunner commandLineRunner(StudentRepository repository){
-//        return args -> {
-////        create();
-//
-//
-//        Student student = studentRepository.findById(4L).get();
-////            log.info("Student is {}", student);
-//
 //            student.getPhones().add(Phone.builder()
 //                    .number("+994 50 636 67 60")
 //                    .student(student)
 //                    .build());
-//            student.getPhones().add(Phone.builder()
-//                    .number("+994 50 500 54 45")
-//                    .student(student)
-//                    .build());
-//            student.getPhones().add(Phone.builder()
-//                    .number("+994 55 777 77 44")
-//                    .student(student)
-//                    .build());
-//            student.getPhones().add(Phone.builder()
-//                    .number("+994 50 536 67 60")
-//                    .student(student)
-//                    .build());
-//            studentRepository.save(student);
 //
-//        };
-//    }
+//            student.getPhones().add(Phone.builder()
+//                    .number("+994 50 111 67 60")
+//                    .student(student)
+//                    .build());
+//            student.getPhones().add(Phone.builder()
+//                    .number("+994 50 333 67 60")
+//                    .student(student)
+//                    .build());
+//            student.getPhones().add(Phone.builder()
+//                    .number("+994 50 444 67 60")
+//                    .student(student)
+//                    .build());
+
+
+        }
+    }
+
+//
+
+
     public void create(){
         Address address = Address.builder()
                 .city("Baku")
